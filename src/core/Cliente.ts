@@ -3,14 +3,14 @@ export default class Cliente {
   #nome: string;
   #idade: number;
 
-  constructor(nome: string, idade: number, id: null) {
+  constructor(nome: string, idade: number, id: string) {
     this.#nome = nome;
     this.#idade = idade;
     this.#id = id;
   }
 
   static vazio() {
-    return new Cliente('', 0, null);
+    return new Cliente('', 0, '');
   }
 
   get id() {
