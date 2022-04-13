@@ -17,8 +17,8 @@ export default function Home() {
       justify-center
       items-center
       bg-gradient-to-r
-      from-blue-400
-      to-blue-700
+      from-purple-700
+      to-blue-500
       text-white
     `}>
       <Layout titulo="Cadastro Simples">
