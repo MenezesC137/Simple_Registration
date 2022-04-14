@@ -6,13 +6,13 @@ import useClientes from "../hooks/useClientes";
 
 export default function Home() {
 
-  const { 
-    cliente, 
-    clientes, 
+  const {
+    cliente,
+    clientes,
     novoCliente,
     salvarCliente,
-    excluirCliente, 
-    selecionarCliente, 
+    excluirCliente,
+    selecionarCliente,
     tabelaVisivel,
     exibirTabela
 
@@ -33,10 +33,10 @@ export default function Home() {
         {tabelaVisivel ? (
           <>
             <div className="flex justify-end">
-              <Botao  
-              className="
+              <Botao
+                className="
                 mb-5 
-                bg-gradient-to-r from-green-500 to-green-700" 
+                bg-gradient-to-r from-green-500 to-green-700"
                 onClick={novoCliente}>
                 Novo Cliente
               </Botao>
@@ -47,7 +47,7 @@ export default function Home() {
             />
           </>
         ) : (
-          <Formulario 
+          <Formulario
             cliente={cliente}
             clienteMudou={salvarCliente}
             cancelado={exibirTabela}
