@@ -1,5 +1,5 @@
 import Cliente from "../core/Cliente"
-import {IconEdit, IconTrash} from './Icones'
+import { IconEdit, IconTrash } from './Icones'
 
 interface TabelaProps {
     clientes: Cliente[],
@@ -9,28 +9,28 @@ interface TabelaProps {
 }
 
 export default function Tabela(props: TabelaProps) {
-    
+
     const exibirAcoes = props.clienteExcluido || props.clienteSelecionado
 
     function renderizarCabecalho() {
 
         return (
-        
+
             <tr>
                 <th className="text-left p-3" >Código</th>
                 <th className="text-left p-3" >Nome</th>
                 <th className="text-left p-3" >Idade</th>
                 {exibirAcoes ? <th className=" p-3" >Ações</th> : false}
             </tr>
-           
+
         )
     }
 
     function renderizarDados() {
-        return props.clientes?.map((cliente, i) =>{
+        return props.clientes?.map((cliente, i) => {
             return (
                 <tr key={cliente.id}
-                className={`${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>
+                    className={`${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>
                     <td className="text-left p-3">{cliente.id}</td>
                     <td className="text-left p-3">{cliente.nome}</td>
                     <td className="text-left p-3">{cliente.idade}</td>
@@ -60,12 +60,12 @@ export default function Tabela(props: TabelaProps) {
                     `}>
                         {IconTrash}
                     </button>
-                ) : false }
+                ) : false}
             </td>
         )
     }
-    
-    return(
+
+    return (
         <table className={`
             w-full
             rounded-xl
@@ -82,7 +82,7 @@ export default function Tabela(props: TabelaProps) {
             <tbody>
                 {renderizarDados()}
             </tbody>
-            
+
         </table>
     )
 }
